@@ -1,5 +1,5 @@
 import React, {useState,useRef,useEffect} from 'react';
-import AuthService from '../../../Services/AuthService';
+import AuthService from '../../../AuthServices/AuthService';
 import Message from '../../Message';
 import "../../css/sign.css";
 
