@@ -1,7 +1,7 @@
 //our global state
 
 import React, {createContext,useState,useEffect} from 'react';
-import AuthService from '../Services/AuthService';
+import AuthService from '../AuthService/AuthService';
 
 export const AuthContext = createContext();
 
