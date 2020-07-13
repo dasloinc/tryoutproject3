@@ -1,5 +1,5 @@
 import React, {useState,useContext} from 'react';
-import AuthService from '../../../AuthServices/AuthService';
+import AuthService from '../../../AuthService/AuthService';
 import Message from '../../Message';
 import {AuthContext} from '../../../Context/AuthContext';
 import "../../css/sign.css";
