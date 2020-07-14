@@ -49,6 +49,7 @@ userRouter.post('/signin', (req, res, next) => {
     )(req, res, next);
   });
 
+
 userRouter.post('/', passport.authenticate('local',{session : false}), (req,res) => {
     if (req.isAuthenticated()){
         const {_id,email} = req.user;
