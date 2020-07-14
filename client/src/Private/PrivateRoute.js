@@ -11,7 +11,7 @@ const PrivateRoute = ({component : Component, ...rest}) => {
         <Route {...rest} render={props => {
             //here we decide what we want to be rendered
             if(!isAuthenticated)
-                return<Redirect to={{pathname: '/signin', state : {from : props.location}}}/>
+                return<Redirect to={{pathname: '/', state : {from : props.location}}}/>
             
             // authenticated and have the correct role like admin or user
             // if(!roles.includes(user.role))

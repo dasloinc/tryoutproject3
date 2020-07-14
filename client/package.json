@@ -2,13 +2,14 @@
   "name": "togather",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://127.0.0.1:3002/" ,
+  "proxy": "http://127.0.0.1:3002/",
   "secure": false,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
+    "mongoose": "^5.9.21",
     "rc-time-picker": "^3.7.3",
     "react": "^16.13.1",
     "react-calendar": "^3.1.0",
@@ -17,7 +18,6 @@
     "react-map-gl": "^4.1.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.0",
-    "mongoose": "^5.9.21",
     "react-search-box": "^2.0.2"
   },
   "scripts": {

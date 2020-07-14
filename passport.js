@@ -2,6 +2,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const JwtStrategy = require('passport-jwt').Strategy;
 const User = require('./models/User');
+const bcrypt = require('bcrypt');
 
 //here is the request for the token
 const cookieExtractor = req => {
@@ -35,15 +36,24 @@ passport.use(new JwtStrategy({
 //WHEN WE ARE LOGGING IN
 //here we are authinticating local strategy the user name & password
 //done will be a function when we are done.
-passport.use(new LocalStrategy((email, password, done) => {
-    User.findOne({email}, (err,user) => {
-        //something wen wrong with database
-        if(err)
-            return done(err);
-        //if no user exist
-        if(!user)
-            return done(null, false);
-        //check if password is correct!
-        user.comparePassword(password, done);
-    })
-}));
+passport.use(
+    new LocalStrategy(
+     {
+      usernameField: 'user[email]',
+      passwordField: 'user[password]',
+     },
+     (email, password, done) => {
+      User.findOne({ email })
+       .then(async (user) => {
+        const valid = await bcrypt.compare(password, user.password);
+        if (!user || !valid) {
+         return done(null, false, {
+          errors: { 'email or password': 'is invalid' },
+         });
+        }
+        return done(null, user);
+       })
+       .catch(done);
+     }
+    )
+  );

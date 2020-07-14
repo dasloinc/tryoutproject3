@@ -1,11 +1,10 @@
 const express  = require("express");
 // const path     = require("path");
-
+const app      = express();
 const cookieParser = require('cookie-parser');
 
 const mongoose = require("mongoose");
 const PORT     = process.env.PORT || 3002;
-const app      = express();
 
 // Define middleware
 app.use(express.urlencoded({ extended: true }));
@@ -46,3 +45,5 @@ idConnection.on('open', () => console.log("SUCCESS"));
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on: http://localhost:${PORT}/`);
 });
+
+

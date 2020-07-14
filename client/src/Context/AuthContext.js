@@ -13,16 +13,20 @@ export default ({ children }) => {
     //Boolean value to see if it is loaded
     // const [isLoaded,setIsLoaded] = useState(true);
 
-    useEffect(() => {
-        // console.log("hello");
-        AuthService.isAuthenticated()
-        .then(data => {
-            console.log(data);
-            setUser(data.user);
-            setIsAuthenticated(data.isAuthenticated);
-            // setIsLoaded(true);
-        });
-    },[]);
+
+
+    // useEffect(() => {
+    //     // console.log("hello");
+    //     AuthService.isAuthenticated()
+    //     .then(data => {
+    //         console.log(data);
+    //         setUser(data.user);
+    //         setIsAuthenticated(data.isAuthenticated);
+    //         // setIsLoaded(false);
+    //     });
+    // },[]);
+
+
 
     return(
         <div>
@@ -30,6 +34,6 @@ export default ({ children }) => {
             <AuthContext.Provider value={{user,setUser,isAuthenticated,setIsAuthenticated}}>
                 { children }
             </AuthContext.Provider>
-        </div>
-        )
+        </div>   
+        )          
 }
