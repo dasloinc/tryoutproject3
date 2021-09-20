@@ -32,7 +32,7 @@ userRouter.post('/signup', (req,res) => {
     });
 });
 
-userRouter.post('/signin', (req, res, next) => {
+uuserRouter.post('/signin', (req, res, next) => {
     return passport.authenticate(
      'local',
      { session: false },
@@ -40,10 +40,11 @@ userRouter.post('/signin', (req, res, next) => {
       if (err) {
        return next(err);
       }
+  
       if (passportUser) {
         const user = passportUser;
         return res.send({ isAuthenticated: true, user });
-      }
+}
       return res.status(400).info;
      }
     )(req, res, next);

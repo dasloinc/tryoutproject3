@@ -4,7 +4,7 @@ import Message from '../../Message';
 import {AuthContext} from '../../../Context/AuthContext';
 import "../../css/sign.css";
 
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 
 
 const SignIn = props => {
@@ -29,8 +29,8 @@ const SignIn = props => {
               authContext.setUser(user);
               authContext.setIsAuthenticated(isAuthenticated);
               //push will send us where we want to go
-              // props.history.push('/mainapp');
-              return <Redirect to="/mainapp" />;
+              props.history.push('/mainapp');
+              // return <Redirect to="/mainapp" />;
           }
           else
               //message will pop if something is wrong

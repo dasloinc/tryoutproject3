@@ -51,6 +51,7 @@ passport.use(
           errors: { 'email or password': 'is invalid' },
          });
         }
+  
         return done(null, user);
        })
        .catch(done);

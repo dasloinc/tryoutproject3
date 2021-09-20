@@ -8,8 +8,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 // import Register from './Components/Register';
 // import Admin from './Components/Admin';
 
-import PrivateRoute from './Private/PrivateRoute';
-import UnPrivateRoute from './Private/UnPrivateRoute';
+// import PrivateRoute from './Private/PrivateRoute';
+// import UnPrivateRoute from './Private/UnPrivateRoute';
 import SignIn from "./components/pages/signin/SignIn";
 import SignUp from "./components/pages/signup/SignUp";
 import MainApp from "./MainApp";
@@ -20,9 +20,9 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <UnPrivateRoute exact path="/" component={SignIn} />
-        <UnPrivateRoute exact path="/signup" component={SignUp} />
-        <PrivateRoute path="/mainapp" component={MainApp}/>
+        <Route exact path="/" component={SignIn} />
+        <Route exact path="/signup" component={SignUp} />
+        <Route path="/mainapp" component={MainApp}/>
 
 
       {/* <Route exact path="/" component={Home1}/>
